@@ -1,0 +1,382 @@
+<html>
+	<head>
+	<style>
+		.hidden{ display: none; }
+        :root {
+          --color-lightest: #f9fdfe;
+          --color-gray-light: #cdcfcf;
+          --color-gray-medium: #686a69;
+          --color-gray-dark: #414643;
+          --color-darkest: #2a2f2c;
+        }
+        
+        *,
+        ::before,
+        ::after {
+          margin: 0;
+          box-sizing: border-box;
+        }
+        
+        /* Heydon Pickering’s lobotomized owl. Details: https://bit.ly/1H7MXUD */
+        * + * {
+          margin-top: 1rem;
+        }
+        
+        /* Set up fonts, colors and all that jazz. */
+        body {
+          background: var(--color-lightest);
+          color: var(--color-gray-medium);
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+            Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          font-size: 18px;
+          line-height: 1.45;
+        }
+        
+        /* Headings use a different font because they’re hipsters. */
+        h1,
+        h2 {
+          color: var(--color-darkest);
+          font-size: 110%;
+          line-height: 1.1;
+        }
+        
+        h1 {
+          font-size: 125%;
+        }
+        
+        /* Set up general layout rules for outer containers. */
+        .contact-form,
+        .results {
+          width: 90vw;
+          max-width: 550px;
+          margin: 8vh auto;
+        }
+        
+        p {
+          margin-top: 0.5rem;
+          font-size: 87.5%;
+        }
+        
+        .results pre {
+          margin-top: 1rem;
+          padding: 0.5rem 1rem;
+          background: $color-lightest;
+          border: 1px solid var(--color-gray-light);
+          overflow-x: scroll;
+        }
+        
+        .contact-form form {
+          position: relative;
+          display: block;
+          margin: 0;
+          padding: 1rem 0 2rem;
+          border-top: 1px solid var(--color-gray-light);
+          border-bottom: 1px solid var(--color-gray-light);
+          overflow: hidden;
+        }
+        
+        .input-group {
+          margin-top: 0.25rem;
+          padding: 0.5rem 1rem;
+        }
+        
+        .contact-form label {
+          display: block;
+          color: $color-gray-dark;
+          font-family: Lato, sans-serif;
+          font-size: 90%;
+          line-height: 1.125;
+        }
+        
+        .group-label {
+          display: inline-block;
+          margin-right: 1rem;
+          font-size: 90%;
+        }
+        
+        .contact-form label.inline {
+          display: inline-block;
+          margin-left: 0.25rem;
+        }
+        
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea{
+          display: block;
+          margin-top: 0.25rem;
+          padding: 0.5rem 0.75rem;
+          border: 1px solid $color-gray-light;
+          width: 100%;
+          font-family: "Open Sans", sans-serif;
+          font-size: 1rem;
+          transition: 150ms border-color linear;
+        }
+        
+        .contact-form input[type=checkbox],
+        .contact-form input[type=radio] {
+          display: inline-block;
+          width: auto;
+        }
+        
+        .contact-form input[type=checkbox]:not(:first-of-type),
+        .contact-form input[type=radio]:not(:first-of-type) {
+          margin-left: 1rem;
+        }
+        
+        .contact-form input:focus,
+        .contact-form input:active {
+          border-color: var(--color-gray-medium);
+        }
+        
+        .contact-form button {
+          display: block;
+          margin: 0.5rem 1rem 0;
+          padding: 0 1rem 0.125rem;
+          background-color: var(--color-gray-medium);
+          border: 0;
+          color: var(--color-lightest);
+          font-family: lato, sans-serif;
+          font-size: 100%;
+          letter-spacing: 0.05em;
+          line-height: 1.5;
+          text-transform: uppercase;
+          transition: 150ms all linear;
+        }
+        
+        .contact-form button:hover,
+        .contact-form button:active,
+        .contact-form button:focus {
+          background: var(--color-darkest);
+          cursor: pointer;
+        }
+        
+	</style>
+	</head>
+	<body>
+	<section class="contact-form">
+	<h1>Update Your Activity</h1>
+	<p>(1) Pick the Activities - (2) quantify them - (3) Describe them</p>
+	
+	<form>
+		<p> <b>Activity Type: </b></p> 
+		<input name="EntryTime" type="hidden" value=""> 
+		<div class="input-group">
+		<input id="Mental-Activity" name="Activity" type="radio" value="Mental Activity"/>
+		<label class="inline" for="Mental Activity">Mental Activity</label>
+		<input id="Physical-Activity" name="Activity" type="radio" value="Physical Activity"/>
+		<label class="inline" for="Physical Activity">Physical Activity</label>
+		<input id="Miscellaneous-Activity" name="Activity" type="radio" value="Miscellaneous Activity"/>
+		<label class="inline" for="Miscellaneous Activity">Miscellaneous Activity</label>
+		</div>
+		
+		<div class="input-group hidden">
+		<label for="subject-Mental">What Mental activity did you finish Now?</label>
+		<select id="subject-Mental" name="subject-Mental">
+			<option></option>
+			<option>PYQ - GATE</option>
+			<option>PYQ Prelims -I</option>
+			<option>PYQ Prelims -II</option>
+			<option>PYQ Mains - I</option>
+			<option>PYQ Mains - II</option>
+			<option>Mock Exam </option>
+			<option>Revision Exam</option>
+			<option>Paper Analysis</option>
+			<option>Study Based on Paper Analysis</option>
+			<option>Topic exam - Thermal</option>
+			<option>Topic exam - GK</option>
+			<option>Topic exam - Production</option>
+			<option>Topic exam - Mechanics</option>
+			<option>Topic exam - Mathematics</option>
+			<option>Topic Analysis Analysis</option>
+			<option>Study Based on Topic Analysis</option>
+		</select>
+	
+		</div>
+		<div class="input-group hidden">
+		<label for="subject-Physical">What Physical Activity did you Finish</label>
+		<select id="subject-Physical" name="subject-Physical">
+			<option></option>
+			<option>Strech and Move All body</option>
+			<option>Cardio for 30mins</option>
+			<option>7 shape lef sitting 60secx10</option>
+			<option>9 shape leg 60secx10</option>
+			<option>4shape leg 60 sec x 10</option>
+			<option>alternative toe touch 15</option>
+			<option>Normal squats 15</option>
+			<option>Wide Stance squart 15</option>
+			<option>Side Lunges 15</option>
+			<option>Donkey kicks 15</option>
+			<option>Floor glute bridge 15</option>
+			<option>Jumping Jacks 50</option>
+			<option>High Knee 15</option>
+			<option>15side leg rise</option>
+			<option>russian twist 15</option>
+			<option>Windshield wipers 15</option>
+			<option>20 sec plank</option>
+			<option>Marching Glute Bridge 15</option>
+			<option>Reverse Lunge 15</option>
+			<option>wall sit 15</option>
+			<option>Punches 25</option>
+			<option> Self- Massage</option>
+		</select>
+		</div>
+		<div class="input-group hidden">
+		<label for="subject-Miscellaneous">What Random activity did you Finish now</label>
+		<select id="subject-Miscellaneous" name="subject-Miscellaneou">
+			<option></option>
+			<option>4 Ltrs of Water (in glasses/16)</option>
+			<option>Fresh Bath after 15mins Cardio</option>
+			<option>Keep Bathroom Clean</option>
+			<option>Clean and Organise your Work Area</option>
+			<option>Make Your Bed Ready</option>
+			<option>Clean your Dry brush</option>
+			<option>Dry brush ones a week</option>
+			<option>Go to sleep around 10</option>
+			<option>Charge your Ipad and mobile ones for 100% in a day</option>
+			<option>Eye contact practice</option>
+			<option>Say No to Pointless Entertainment and learn something else</option>
+			<option>one project going for earning money</option>
+			<option>Think properrly before responding</option>
+		</select>
+		
+
+		</div>
+		<div class="input-group">
+		<label for="Quantity">How many did you do? Quantity</label>
+		<input id="Quantity" name="Quantity" type="numbers"/>
+		</div>
+		
+		<div class="input-group">
+		<label for="name">What are the units used for quantity</label>
+		<input id="units" name="units" type="text"/>
+		</div>
+
+		
+		<div class="input-group">
+		<label for="message">Describe details <b> (Mainly how did you use ur time)</b></label>
+		<textarea id="message" name="message" rows="6" cols="65"></textarea>
+		</div>
+		
+		<div class="input-group">
+		<p class="group-label"><b>Review</b></p>
+		<input id="review-happy" name="review" type="checkbox" value="Happy"/>
+		<label class="inline" for="review-Happy">Happy</label>
+		<input id="review-noHappy" name="review" type="checkbox" value="NoHappy"/>
+		<label class="inline" for="review-noHappy">Not Happy</label>
+		</div>
+		<button type="submit">Create JSON</button>
+	</form>
+	</section>
+	
+	<div class="results">
+	<h2>Form Data</h2>
+	<pre></pre>
+	</div>
+	
+	<script>
+
+		function handleFormSubmit(event) {
+		
+		
+			function currentTime() {
+			let date = new Date(); 
+			let hh = date.getHours();
+			let mm = date.getMinutes();
+			let ss = date.getSeconds();
+			let session = "AM";
+			
+			if(hh == 0){
+				hh = 12;
+			}
+			if(hh > 12){
+				hh = hh - 12;
+				session = "PM";
+			}
+			
+			hh = (hh < 10) ? "0" + hh : hh;
+			mm = (mm < 10) ? "0" + mm : mm;
+			ss = (ss < 10) ? "0" + ss : ss;
+				
+			let time =  hh + ":" + mm + ":" + ss + " " + session;
+			
+			return time;
+			}
+			const time = currentTime();
+		
+			function currentDay() {
+			let date = new Date(); 
+			let day = date.toJSON().slice(0,10);
+			
+			return day;
+			}
+			
+			day = currentDay();
+			
+////////////////////////////////////////////////////////////////////////////////////////////
+			event.preventDefault();
+			const date = new Date();
+			const data = new FormData(event.target);
+			const formJSON = {}
+//			const formJSON = Object.fromEntries(data.entries());
+			
+			// for multi-selects, we need special handling
+//			formJSON.review = data.getAll('review');
+			formJSON.EntryActivity = {};
+			formJSON.EntryActivity.Date = day;
+			formJSON.EntryActivity.Activity = Object.fromEntries(data.entries());
+			formJSON.EntryActivity.Activity.EntryTime = time;
+			formJSON.EntryActivity.Activity.Review = data.getAll('review');
+			
+			
+			
+			const results = document.querySelector('.results pre');
+			results.innerText = JSON.stringify(formJSON, null, 2);
+			const text = JSON.stringify(formJSON, null, 4);
+			var element = document.createElement("a");
+			element.setAttribute(
+				"href",
+				"data:application/json;charset=utf-8," + encodeURIComponent(text)
+			);
+			element.setAttribute("download", "json.json");
+			// don't display the tag
+			element.style.display = "none";
+			// add tag to document
+			document.body.appendChild(element);
+			// click it: this starts the download
+			element.click();
+			// remove the tag again
+			document.body.removeChild(element);
+			
+			}
+			
+			const form = document.querySelector('.contact-form');
+			form.addEventListener('submit', handleFormSubmit);
+			
+			var radios = document.forms[0].elements["Activity"];
+			radios.forEach(rb=>rb.addEventListener("change", function(){
+			document.getElementById("subject-Mental").disabled = "true";
+			document.getElementById("subject-Physical").disabled = "true";
+			document.getElementById("subject-Miscellaneous").disabled = "true";
+			document.getElementById("subject-Mental").parentElement.classList.add("hidden");
+			document.getElementById("subject-Physical").parentElement.classList.add("hidden");
+			document.getElementById("subject-Miscellaneous").parentElement.classList.add("hidden");
+			if ( radios[0].checked ) {
+			document.getElementById("subject-Mental").disabled = false;
+			document.getElementById("subject-Mental").parentElement.classList.remove("hidden");
+			} 
+			if (radios[1].checked) {
+			document.getElementById("subject-Physical").disabled = false;
+			document.getElementById("subject-Physical").parentElement.classList.remove("hidden");
+			}
+			if (radios[2].checked) {
+			document.getElementById("subject-Miscellaneous").disabled = false;
+			document.getElementById("subject-Miscellaneous").parentElement.classList.remove("hidden");
+			}
+			}));
+
+
+		
+
+	</script>
+	</body>
+</html>
