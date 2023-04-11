@@ -159,7 +159,9 @@
 	
 	<form>
 		<p> <b>Activity Type: </b></p> 
+		<input name="EntryDate" type="hidden" value=""> 
 		<input name="EntryTime" type="hidden" value=""> 
+		 
 		<div class="input-group">
 		<input id="Mental-Activity" name="Activity" type="radio" value="Mental Activity"/>
 		<label class="inline" for="Mental Activity">Mental Activity</label>
@@ -224,7 +226,7 @@
 		<label for="subject-Miscellaneous">What Random activity did you Finish now</label>
 		<select id="subject-Miscellaneous" name="subject-Miscellaneou">
 			<option></option>
-			<option>4 Ltrs of Water (in glasses/16)</option>
+			<option>4 Ltrs of Water</option>
 			<option>Fresh Bath after 15mins Cardio</option>
 			<option>Keep Bathroom Clean</option>
 			<option>Clean and Organise your Work Area</option>
@@ -257,14 +259,15 @@
 		<textarea id="message" name="message" rows="6" cols="65"></textarea>
 		</div>
 		
-		<div class="input-group">
+<!--		<div class="input-group">
 		<p class="group-label"><b>Review</b></p>
 		<input id="review-happy" name="review" type="checkbox" value="Happy"/>
 		<label class="inline" for="review-Happy">Happy</label>
 		<input id="review-noHappy" name="review" type="checkbox" value="NoHappy"/>
 		<label class="inline" for="review-noHappy">Not Happy</label>
-		</div>
+		</div>  -->
 		<button type="submit">Create JSON</button>
+		
 	</form>
 	</section>
 	
@@ -321,11 +324,17 @@
 			
 			// for multi-selects, we need special handling
 //			formJSON.review = data.getAll('review');
-			formJSON.EntryActivity = {};
-			formJSON.EntryActivity.Date = day;
-			formJSON.EntryActivity.Activity = Object.fromEntries(data.entries());
-			formJSON.EntryActivity.Activity.EntryTime = time;
-			formJSON.EntryActivity.Activity.Review = data.getAll('review');
+//			formJSON.EntryTime = time;
+//			formJSON.EntryDate = day;
+			formJSON.Activity = [];
+			formJSON.Activity[0] = Object.fromEntries(data.entries());
+			formJSON.Activity[0].EntryTime = time;
+			formJSON.Activity[0].EntryDate = day;
+			
+//			formJSON.EntryActivity[0].Activity = Object.fromEntries(data.entries());
+//			formJSON.EntryActivity[0].Activity.EntryTime = time;
+//			formJSON.EntryActivity[0].Activity.EntryDate = day;
+//			formJSON.EntryActivity[0].Activity.Review = data.getAll('review');
 			
 			
 			
@@ -375,7 +384,7 @@
 			}));
 
 
-		
+
 
 	</script>
 	</body>
